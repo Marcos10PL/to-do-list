@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twoja lista zadań</title>
+
+    <script src="https://kit.fontawesome.com/9e75794b11.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/main.css">
+
+</head>
+
+<body>
+    
+    <header>
+        <h2>Twoja lista zadań</h2>        
+    </header>
+
+    <main>
+        <section class="start">
+            <h3>Witaj! Oto strona, na której bez problemu <br> będziesz mógł zarządzać swoimi zadaniami!</h3>
+            <h3>Zanim zaczniesz podaj swoję imię, aby twoja lista się zapisała:</h3>
+            <input type="text" maxlength="20">
+            <p>Wypełnij pole</p>
+        </section>
+        <section class="list">
+            <p>Dodawaj, usuwaj, przenoś - to ty decydujesz! Twoje zmiany zostaną zapisane po wyłączeniu strony. <br>(Ten komunikat zniknie po odświeżeniu strony)</p>
+            <div class="planned">
+                <h3>Zaplanowane</h3>
+                <ul></ul>
+                <span class="add"><i class="fa-solid fa-square-plus"></i> dodaj...</span>
+                <span class="adding"><input type="text" class="task" placeholder="Nazwa zadania..." maxlength="60">
+                    <i class="fa-solid fa-check"></i>
+                    <i class="fa-solid fa-xmark"></i>
+                </span>
+            </div>
+            <div class="during">
+                <h3>W trakcie</h3>
+                <ul></ul>
+                <span class="add"><i class="fa-solid fa-square-plus"></i> dodaj...</span>
+                <span class="adding"><input type="text" class="task" placeholder="Nazwa zadania..." maxlength="60">
+                    <i class="fa-solid fa-check"></i>
+                    <i class="fa-solid fa-xmark"></i>
+                </span>
+            </div>
+            <div class="ended">
+                <h3>Ukończone</h3>
+                <ul></ul>
+                <span class="add"><i class="fa-solid fa-square-plus"></i> dodaj...</span>
+                <span class="adding"><input type="text" class="task" placeholder="Nazwa zadania..." maxlength="60">
+                    <i class="fa-solid fa-check"></i>
+                    <i class="fa-solid fa-xmark"></i>
+                </span>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <span>Wypełnijąc pole i klikając enter <br>zgadzasz się na używanie plików cookies na tej stronie</span>
+        <p class="reset">Zresetuj wszystko</p>
+        <p>2023 &copy; Wszelkie prawa zastrzeżone</p>
+    </footer>
+
+    <div class="move">
+        <h4>Przenieś do:</h4>
+        <ul>
+            <li class="planned">Zaplanowane</li>
+            <li class="during">W trakcie</li>
+            <li class="ended">Ukończone</li>
+        </ul>
+        <hr>
+        <p class="remove">Usuń</p>
+        <p class="removeAll">Usuń wszystko</p>
+        <hr>
+        <p>Anuluj</p>
+    </div>
+
+    <div class="reset">
+        <h4>Na pewno chcesz usunąć całą twoją listę i zrestować imię?</h3>
+        <p class="remove">TAK</p>
+        <p>Anuluj</p>
+    </div>
+
+    <script src="./js/script.js"></script>
+
+</body>
+</html>
