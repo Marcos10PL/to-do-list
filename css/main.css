@@ -1,0 +1,173 @@
+body
+{
+    background-color: rgb(221, 221, 221);
+    color: rgb(67, 89, 114);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    font-size: 18px;
+}
+
+.list, .start, header p, .adding
+{
+    display: none;
+}
+
+header h2
+{
+    text-transform: uppercase;
+    margin-top: 30px;
+    display: none;
+}
+
+footer
+{
+    margin-top: 40px;
+    opacity: 0.6;
+}
+
+input 
+{
+    font-family: inherit;
+    text-align: inherit;
+    font-size: inherit;
+    border: 2px solid rgb(88, 147, 214);
+    border-radius: 20px;
+    padding: 10px;
+    color: white;
+    background-color: rgb(26, 26, 48);
+    font-weight: bold;
+}
+
+.start input:focus 
+{
+    -webkit-box-shadow: 0px 0px 30px 0px rgba(97, 121, 146, 1);
+    -moz-box-shadow: 0px 0px 30px 0px rgba(97, 121, 146, 1);
+    box-shadow: 0px 0px 30px 0px rgba(97, 121, 146, 1);
+}
+
+.list
+{
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 930px;
+    align-items: flex-start;
+}
+
+.list > p
+{
+    margin: auto;
+    display: none;
+    margin-bottom: 10px;
+}
+
+.list div
+{
+    display: none;
+    border: 2px solid;
+    border-radius: 10px;
+    width: 300px;
+    box-sizing: border-box;
+    margin: 5px;
+    padding: 20px;
+    text-align: left;
+    word-wrap: break-word;
+}
+
+.list li
+{
+    padding: 2px;
+}
+
+.list li:hover
+{
+    background-color: rgb(241, 240, 240);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.list div input
+{
+    padding: 2px 2px 2px 10px;
+    width: 70%;
+}
+
+.list h3
+{
+    text-align: center;
+}
+
+.move, div.reset
+{
+    display: none;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(61, 61, 61);
+    border: 2px solid rgb(76, 122, 175);
+    padding: 10px 30px 10px 30px;
+    border-radius: 20px;
+    color: rgb(221, 221, 221);
+}
+
+.move ul
+{
+    list-style: none;
+    padding: 0;
+}
+
+.move li
+{
+    padding: 5px;
+    color: rgb(142, 178, 255);
+}
+
+.move li:hover, .move p:hover, .reset p:hover
+{
+    cursor: pointer;
+    color: rgb(195, 211, 247) !important;
+}
+
+footer p.reset:hover
+{
+    cursor: pointer;
+    color: rgb(255, 91, 91);
+}
+
+span.add:hover
+{
+    cursor: pointer;
+    color: rgb(70, 125, 170);
+}
+
+.adding .fa-solid
+{
+    margin: 0 5px 0 5px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 935px)
+{
+    .list
+    {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+div.planned{border-color: rgb(165, 109, 109) !important;}
+div.during{border-color: rgb(235, 141, 78) !important;}
+div.ended{border-color: green !important;}
+
+.adding .fa-check{color: green;}
+.adding .fa-check:hover{color: rgb(106, 150, 106);}
+.adding .fa-xmark{color: rgb(170, 33, 15);}
+.adding .fa-xmark:hover{color: rgb(180, 73, 59);}
+.remove, .removeAll {color: rgb(255, 117, 117);}
+
+.start p{color: rgb(76, 122, 175);}
+footer .reset {color: rgb(255, 0, 0); display: none;}
+footer span {font-weight: 700; color: rgb(0, 0, 0); display: none;}
+
