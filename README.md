@@ -1,2 +1,2 @@
 # to-do-list
-Main language: TypeScript
+Main language: TypeScript, SASS
