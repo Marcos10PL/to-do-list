@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twoja lista zadań</title>
+
+    <script src="https://kit.fontawesome.com/9e75794b11.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+
+    <link rel="stylesheet" href="./style/main.css">
+
+</head>
+
+<body>
+    
+    <header>
+        <div class="start">
+            <h2>Twoja <span class="primary-color">lista to-do</span></h2>
+            <p>
+                Witaj, trafiłeś na stronę, na której bez problemu będziesz mógł 
+                <br> zarządzać swoimi planami oraz zadaniami!
+            </p>
+            <p> Wpisz swoje imię aby rozpocząć: </p>
+            <form autocomplete="off">
+                <input type="text" name="name" id="name" minlength="3" maxlength="20">
+                <button class="submit">
+                    <i class="fa-solid fa-arrow-right primary-color"></i>
+                </button>
+                <div class="info">Wypełnij pole</div>
+            </form>
+        </div>
+    </header>
+
+    <main>
+        <section class="list"></section>
+        <section class="task-form">
+            <form autocomplete="off">
+                <input type="text" id="add-task" placeholder="nazwa zadania..." maxlength="35">
+                 <select name="categories" id="categories">
+                    <option value="not-chosen" selected disabled hidden>kategoria</option>
+                </select>
+                <select name="task-status" id="task-status">
+                    <option value="not-chosen" selected disabled hidden>status</option>
+                </select>
+                <button class="submit-task">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+            </form>
+            <div class="error"></div>
+        </section>
+    </main>
+
+    <div class="help-section">
+        <div class="close">
+            Zamknij <i class="fa-solid fa-xmark"></i> 
+        </div>
+
+        <div>
+            <h4>Witaj w sekcji pomoc! </h4>
+            <p>Tutaj znajdziesz objaśnienia jak korzystać ze swojej listy to-do. </p>
+            <p>Uwaga! Wygląd niektórych elemntów może różnić się w zależnosci od urządzenia.</p>
+        </div>
+        <div>
+            <h4>Aby dodać nowe zadanie użyj poniższego panelu: </h4>
+            <img class="img-add-task" src="./img/add-task.png" alt="dodawanie zadania"> <br>
+            <p>
+                Aby zadanie się dodało, musisz podać jego nazwę, <br>
+                wybrać kategorię oraz status, a następnie kliknąć ikonkę plusa.
+            </p>
+        </div>
+        <div>
+            <h4>Wygląd dodanego zadania:</h4>
+            <img src="./img/task.png" alt=""> <br>
+            <p>
+                Klikając ikonkę <i class="fa-solid fa-xmark"></i> bezpowrotnie usuniesz zadanie z listy
+            </p>
+        </div>
+        <div>
+            <h4>Klikając na nazwę zadania, możesz zmienić jego status:</h4>
+            <p>Kolejno na zdjęciach: zaplanowane, w trakcie, zakończone</p>
+            <div>
+                <img src="./img/task.png" alt="zaplanowane">
+            </div>
+            <div>
+                <img src="./img/task-during.png" alt="w trakcie">
+            </div>
+            <div>
+                <img src="./img/task-finished.png" alt="zakończone">
+            </div>
+        </div>
+        <div>
+            <h4>Ikonka znajdująca się obok ikonki <i class="fa-solid fa-xmark"></i> oznacza wybraną kategorię:</h4>
+            <div class="categories-container">
+                <div>
+                    <i class="fa-solid fa-house"></i> dom 
+                </div>
+                <div>
+                    <i class="fa-solid fa-briefcase"></i> praca
+                </div>
+                <div>
+                    <i class="fa-solid fa-face-smile"></i> hobby 
+                </div>
+                <div>
+                    <i class="fa-solid fa-volleyball"></i> sport 
+                </div>
+                <div>
+                    <i class="fa-solid fa-cart-shopping"></i> zakupy
+                </div>
+                <div>
+                    <i class="fa-solid fa-notes-medical"></i> zdrowie
+                </div>
+                <div>
+                    <i class="fa-solid fa-people-group"></i> spotkanie
+                </div>
+                <div>
+                    <i class="fa-solid fa-location-dot"></i> podróż
+                </div>
+                <div>
+                    <i class="fa-solid fa-people-roof"></i> rodzina
+                </div>
+                <div>
+                    <i class="fa-solid fa-couch"></i> relaks
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="start secondary-color">
+            Wypełnijąc pole i przechodząc dalej 
+            <br> zgadzasz się na używanie plików cookies na tej stronie
+        </div>
+        <div class="footer">
+            <button class="deleteAll">usuń wszystkie zadania</button>
+            <button class="reset">zresetuj imię</button>
+            <button class="help">pomoc</button>
+        </div>
+        <p>2023 &copy; Wszelkie prawa zastrzeżone </p>
+    </footer>
+
+    <script src="./script/app.js"></script>
+</body>
+</html>
