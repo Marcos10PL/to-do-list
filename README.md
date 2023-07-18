@@ -1,2 +1,2 @@
 # to-do-list
-Main language: JavaScript + jQuery
+Main language: TypeScript
