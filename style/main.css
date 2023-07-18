@@ -1,0 +1,365 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+.start form .info, .task-form .error {
+  margin: 0 !important;
+  padding: 10px 0;
+  font-size: 17px;
+  color: rgb(0, 186, 192);
+  height: 20px;
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: rgb(24, 24, 24);
+  color: rgb(196, 196, 196);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  font-size: 19px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+header h2, header p {
+  padding-bottom: 20px;
+}
+
+.start {
+  display: none;
+  padding: 10px 20px;
+}
+.start form input {
+  outline: none;
+  border: none;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  background-color: transparent;
+  padding: 3px 5px;
+  border-bottom: 2px solid rgb(0, 186, 192);
+}
+.start form input:focus {
+  filter: brightness(1.4);
+}
+.start form .submit {
+  outline: none;
+  border: none;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  background-color: transparent;
+  padding: 3px 5px;
+  border-bottom: 2px solid rgb(128, 177, 80);
+  cursor: pointer;
+  transition: filter 0.2s ease-in-out;
+}
+.start form .submit > i {
+  color: rgb(128, 177, 80);
+}
+.start form .submit:hover {
+  filter: brightness(1.4);
+}
+.list {
+  max-width: 760px;
+  border: 2px dashed rgb(0, 186, 192);
+  padding: 20px 40px;
+  margin: 30px auto;
+  display: none;
+  border-radius: 16px/28px;
+}
+@media (max-width: 860px) {
+  .list {
+    padding: 10px;
+    margin: 30px 10px auto;
+    margin-bottom: 20px;
+  }
+}
+.list ul {
+  list-style-type: none;
+}
+.list ul > li {
+  margin-top: 8px;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: rgb(29, 28, 28);
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+}
+.list ul > li:first-child {
+  margin-top: 0;
+}
+.list ul > li label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.15s ease-in-out;
+  margin-right: 50px;
+  word-break: break-word;
+}
+.list ul > li label:hover {
+  transform: translateX(4px);
+}
+.list ul > li label input[type=checkbox] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  color: inherit;
+  border: 2px solid currentColor;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 860px) {
+  .list ul > li label input[type=checkbox] {
+    width: auto;
+    height: auto;
+  }
+}
+.list ul > li label input[type=checkbox]::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  transform: scale(0);
+  transition: transform 0.1s ease-in-out;
+  border-radius: 50%;
+}
+.list ul > li label input[type=checkbox]:checked::before {
+  transform: scale(1);
+}
+.list ul > li div.icons {
+  display: flex;
+  gap: 25px;
+}
+.list i.fa-xmark {
+  color: rgb(167, 2, 2);
+  transition: 0.15s ease-in-out;
+}
+.list i.fa-xmark:hover {
+  color: #fc1313;
+  cursor: pointer;
+}
+
+.task-form {
+  display: none;
+  padding: 20px;
+  width: -moz-max-content;
+  width: max-content;
+  margin: auto;
+}
+@media (max-width: 625px) {
+  .task-form {
+    width: 90vw;
+  }
+}
+.task-form form {
+  display: flex;
+}
+@media (max-width: 625px) {
+  .task-form form {
+    flex-direction: column;
+  }
+}
+.task-form form input {
+  outline: none;
+  border: none;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  background-color: transparent;
+  padding: 3px 5px;
+  border: 2px solid rgb(128, 177, 80);
+  background-color: #1e1e1e;
+  border-top-left-radius: 15px;
+  border-right: none;
+}
+.task-form form input:focus {
+  box-shadow: 0px 0px 10px 0px rgb(128, 177, 80);
+}
+@media (max-width: 625px) {
+  .task-form form input {
+    border: 2px solid rgb(128, 177, 80);
+    border-bottom: none;
+    padding: 10px;
+  }
+}
+.task-form form select {
+  outline: none;
+  border: none;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  background-color: transparent;
+  padding: 3px 5px;
+  border: 2px solid rgb(0, 186, 192);
+  background-color: rgb(24, 24, 24);
+  border-right: none;
+  text-align: left;
+  padding: 8px;
+}
+.task-form form select:focus {
+  box-shadow: 0px 0px 10px 0px rgb(0, 186, 192);
+}
+@media (max-width: 625px) {
+  .task-form form select {
+    border: 2px solid rgb(0, 186, 192);
+    border-bottom: none;
+    padding: 10px;
+  }
+}
+.task-form form .submit-task {
+  outline: none;
+  border: none;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  background-color: transparent;
+  padding: 3px 5px;
+  border: 2px solid rgb(128, 177, 80);
+  background-color: rgba(128, 177, 80, 0.2);
+  transition: filter 0.2s ease-in-out;
+  border-bottom-right-radius: 15px;
+  color: rgb(128, 177, 80);
+  padding: 8px 12px;
+}
+.task-form form .submit-task > i {
+  color: rgb(128, 177, 80);
+}
+.task-form form .submit-task:hover {
+  cursor: pointer;
+  filter: brightness(1.4);
+}
+.help-section {
+  max-width: 760px;
+  border: 2px dashed rgb(128, 177, 80);
+  padding: 20px 40px;
+  margin: 30px auto;
+  display: none;
+  border-radius: 16px/28px;
+  background-color: rgb(24, 24, 24);
+  margin-bottom: 40px !important;
+}
+@media (max-width: 860px) {
+  .help-section {
+    padding: 10px;
+    margin: 30px 10px auto;
+    margin-bottom: 20px;
+  }
+}
+.help-section > div:not(:first-child) {
+  margin-top: 15px;
+  padding: 12px 22px;
+  background-color: rgb(29, 28, 28);
+  border-radius: 15px;
+}
+.help-section > div:not(:first-child) > h4 {
+  margin: 10px 0 15px 0;
+}
+.help-section > div:not(:first-child) img {
+  margin-top: 5px;
+}
+@media (max-width: 860px) {
+  .help-section > div:not(:first-child) img {
+    width: 100%;
+  }
+}
+.help-section > div:not(:first-child) p {
+  display: block;
+  margin: 10px 5px;
+}
+.help-section > div:not(:first-child) .categories-container {
+  display: flex;
+  margin: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+}
+.help-section > div:not(:first-child) .categories-container > div {
+  margin: 10px;
+}
+.help-section .close {
+  text-align: right;
+  transition: color 0.15s ease-in-out;
+  color: #fe9191;
+}
+.help-section .close:hover {
+  color: #fec3c3;
+  cursor: pointer;
+}
+
+footer {
+  color: rgb(95, 95, 95);
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+footer div {
+  display: none;
+  margin-top: 10px;
+}
+footer button {
+  outline: none;
+  border: none;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  background-color: transparent;
+  padding: 3px 5px;
+  border-right: 2px solid rgb(95, 95, 95);
+  color: rgba(128, 177, 80, 0.6);
+  transition: color 0.15s ease-in-out;
+  padding: 0 10px 0 5px;
+}
+footer button:last-child {
+  border-right: none;
+}
+footer button:hover {
+  cursor: pointer;
+  color: rgb(128, 177, 80);
+}
+footer p {
+  display: block;
+  margin-top: 10px;
+}
+
+.finished {
+  text-decoration: line-through;
+  color: rgb(95, 95, 95);
+}
+.finished + div > i:not(:last-child) {
+  color: rgb(95, 95, 95);
+}
+.finished input[type=checkbox]:before {
+  box-shadow: inset 10px 10px rgb(95, 95, 95);
+}
+
+.during, .during + div > i:not(:last-child) {
+  color: white;
+}
+.during input[type=checkbox]:before, .during + div > i:not(:last-child) input[type=checkbox]:before {
+  box-shadow: inset 10px 10px rgb(128, 177, 80);
+}
+
+.display-none {
+  display: none;
+}
+
+.display-block {
+  display: block;
+}
+
+.primary-color {
+  color: rgb(0, 186, 192);
+}
+
+.secondary-color {
+  color: rgb(128, 177, 80);
+}/*# sourceMappingURL=main.css.map */

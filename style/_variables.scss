@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+$primary: rgb(0, 186, 192);
+$secondary: rgb(128, 177, 80);
+$third: rgb(29, 28, 28);
+$bg: rgb(24, 24, 24);
+$text: rgb(196, 196, 196); 
+$gray: rgb(95, 95, 95);
+$red: rgb(167, 2, 2);
+$border: 2px solid;
+
+%info
+{
+    margin: 0 !important;
+    padding: 10px 0;
+    font-size: 17px;
+    color: $primary;
+    height: 20px;
+}
+
+@mixin container($color)
+{
+    max-width: 760px;
+    border: 2px dashed $color;
+    padding: 20px 40px;
+    margin: 30px auto;
+    display: none;
+    border-radius: 16px/28px;
+}
+
+@mixin input($borderPosition, $color)
+{
+    outline: none;
+    border: none;
+    font: inherit;
+    color: inherit;
+    text-align: inherit;
+    background-color: transparent;
+    padding: 3px 5px;
+    #{$borderPosition}: $border $color;
+}
