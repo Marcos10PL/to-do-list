@@ -5,6 +5,7 @@ An interactive to-do list that can be freely managed and is saved when the websi
 ## API for handling browser cookies
 
 The website uses a simple, lightweight JavaScript API for handling browser cookies which comes from: 
+
 -- https://github.com/js-cookie/js-cookie
 
 ## tech
