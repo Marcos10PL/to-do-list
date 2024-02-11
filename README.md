@@ -10,7 +10,7 @@ The website uses a simple, lightweight JavaScript API for handling browser cooki
 ## tech
 
 -- TypeScript <br>
--- SASS<br>
+-- SCSS<br>
 -- HTML<br>
 
 When creating this project, I learned TypeScript, which is why this website was created in this language.
