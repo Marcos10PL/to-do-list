@@ -23,7 +23,7 @@ const resetButton = document.querySelector<HTMLButtonElement>('.reset');
 
 if
 (   !submitButton 
-    || !inputForName 
+    || !inputForName
     || !inputInfo 
     || !footerButtons 
     || !taskForm 
@@ -156,7 +156,7 @@ inputForName.addEventListener('input', () =>
 });
 
 submitButton.addEventListener('click', (e) => submit(e));
-inputForName.addEventListener('keypress', (e) => e.key == "enter" && submit(e));
+inputForName.addEventListener('keydown', (e) => e.key == "Enter" && submit(e));
 
 // name submitting
 const submit = (e: Event) =>
@@ -313,12 +313,10 @@ addingTaskButton.addEventListener('click', (e) =>
         error = true;
     }
 
-    icon = category ? categories[category] : assertUnreachable();
-
-    taskInfo.innerText = errorMessage;
-
-    if(!error && status && category && icon)
+    if(!error && status && category)
     {
+        icon = category ? categories[category] : assertUnreachable();
+
         const newTask: Task = 
         {
             id: uuidv4(),
@@ -334,11 +332,13 @@ addingTaskButton.addEventListener('click', (e) =>
         inputForTaskName.value = '';
         statusSelect.value = notChosen;
         categorySelect.value = notChosen;
+        taskInfo.innerText = '';
 
         renderList();
     }
     else
-        assertUnreachable();
+        taskInfo.innerText = errorMessage;
+        
 });
 
 // changing a task status
@@ -398,7 +398,6 @@ resetButton.addEventListener('click', () => deleteCookies());
 const updateCookie = (tasks: Task[]) =>
 {
     const tasksArray = JSON.stringify(tasks);
-    Cookies.get('list') != null && Cookies.remove('list');
     Cookies.set('list', tasksArray, { expires: 365, path: '' });
 }
 
