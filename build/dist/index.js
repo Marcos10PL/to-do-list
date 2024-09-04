@@ -58,7 +58,7 @@ inputForName.addEventListener("input", () => {
     inputInfo.innerText = "Pole nie może być puste";
 });
 submitButton.addEventListener("click", (e) => submit(e));
-inputForName.addEventListener("keypress", (e) => e.key == "enter" && submit(e));
+inputForName.addEventListener("keydown", (e) => e.key == "Enter" && submit(e));
 const submit = (e) => {
   e.preventDefault();
   if (error) {
@@ -161,9 +161,8 @@ addingTaskButton.addEventListener("click", (e) => {
     errorMessage = "Podaj nazwę zadania!";
     error2 = true;
   }
-  icon = category ? categories[category] : assertUnreachable();
-  taskInfo.innerText = errorMessage;
-  if (!error2 && status && category && icon) {
+  if (!error2 && status && category) {
+    icon = category ? categories[category] : assertUnreachable();
     const newTask = {
       id: uuidv4(),
       name,
@@ -176,9 +175,10 @@ addingTaskButton.addEventListener("click", (e) => {
     inputForTaskName.value = "";
     statusSelect.value = notChosen;
     categorySelect.value = notChosen;
+    taskInfo.innerText = "";
     renderList();
   } else
-    assertUnreachable();
+    taskInfo.innerText = errorMessage;
 });
 const changeStatus = (currentTask, status, label, input) => {
   label.className = "";
@@ -209,7 +209,6 @@ deleteButton.addEventListener("click", () => {
 resetButton.addEventListener("click", () => deleteCookies());
 const updateCookie = (tasks2) => {
   const tasksArray = JSON.stringify(tasks2);
-  Cookies.get("list") != null && Cookies.remove("list");
   Cookies.set("list", tasksArray, {expires: 365, path: ""});
 };
 const deleteCookies = () => {
