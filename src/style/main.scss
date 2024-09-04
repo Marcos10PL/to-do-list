@@ -1,0 +1,114 @@
+@use './variables' as *;
+@use 'sass:color';
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import './start';
+@import './task-list'; 
+@import './task-form';
+
+*
+{
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+body
+{
+    background-color: $bg;  
+    color: $text;  
+    font-size: 1.125rem;
+    text-align: center;
+}
+
+h2
+{
+    padding-top: 1.2rem;
+}
+
+header p
+{
+    padding: 1rem 0;
+}
+
+footer
+{
+    color: $gray;
+    font-size: .9rem;
+    margin-top: 1.8rem;
+    
+    div
+    {
+        display: none;
+    }
+    
+    button
+    {
+        @include input('border-right', $gray);
+        color: scale-color($secondary, $alpha: -40%);
+        transition: color .15s ease-in-out;
+        padding: 0 .6rem;
+        
+        &:last-child
+        {
+            border-right: none;
+        }
+        
+        &:hover
+        {
+            cursor: pointer;
+            color: $secondary;
+        }
+    }
+
+    p
+    {
+        display: block;
+        margin-top: .6rem;
+    }
+}
+
+.finished
+{
+    text-decoration: line-through;
+    color: $gray;
+    
+    + div > i:not(:last-child)
+    {
+        color: $gray;
+    }
+    
+    input[type="checkbox"]:before 
+    {
+        box-shadow: inset 10px 10px $gray;
+    }
+}
+
+.during 
+{
+    color: #fff;
+    
+    + div > i:not(:last-child)
+    {
+      color: #fff;
+    }
+    
+    input[type="checkbox"]:before 
+    {
+        box-shadow: inset 10px 10px $secondary;
+    }
+}
+
+.info
+{
+  margin: 0.625rem auto;
+  color: $primary;
+}
+
+.display-none     { display: none; }
+.display-block    { display: block; }
+.primary-color    { color: $primary; }
+.secondary-color  { color: $secondary; }

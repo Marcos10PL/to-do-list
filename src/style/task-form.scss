@@ -1,0 +1,82 @@
+.task-form
+{
+    display: none;
+    width: max-content;
+    margin: .625rem auto;
+
+    @media (max-width: 40rem) 
+    {
+        width: 90vw;
+    }
+
+    form
+    {
+        display: flex;
+
+        @media (max-width: 40rem) 
+        {
+            flex-direction: column;
+        }
+
+        input
+        {
+            @include input('border', $secondary);
+            background-color: lighten($bg, 2.5);
+            border-top-left-radius: 15px;
+            border-right: none;
+            
+            &:focus
+            {
+                box-shadow: 0 0 10px 0 $secondary;
+            }
+
+            @media (max-width: 40rem) 
+            {
+                border: $border $secondary;
+                border-bottom: none;
+                padding: .625rem;
+            }
+        }
+        
+        select
+        {
+            @include input('border', $primary);
+            background-color: $bg; 
+            border-right: none;
+            text-align: left;
+            padding: .625rem;
+            
+            &:focus
+            {
+                box-shadow: 0 0 10px 0 $primary;
+            }
+
+            @media (max-width: 40rem) 
+            {
+                border: $border $primary;
+                border-bottom: none;
+            }
+        }
+        
+        button
+        {
+            @include input('border', $secondary);
+            background-color: scale-color($secondary, $alpha: -80%); 
+            transition: filter .2s ease-in-out;
+            border-bottom-right-radius: 15px;
+            color: $secondary;
+            padding: .625rem;
+            
+            > i 
+            {
+                color: $secondary;
+            }
+            
+            &:hover
+            {
+                cursor: pointer;
+                filter: brightness(1.4);
+            }
+        }
+    }
+}

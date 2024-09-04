@@ -1,0 +1,21 @@
+$primary:   #00bac0;
+$secondary: #80b150;
+$third:     #242222;
+$bg:        #181818;
+$text:      #c4c4c4;
+$gray:      #5f5f5f;
+$red:       #a70202;
+
+$border:    .125rem solid;
+
+@mixin input($borderPosition, $color)
+{
+    outline: none;
+    border: none;
+    font: inherit;
+    color: inherit;
+    text-align: inherit;
+    background-color: transparent;
+    padding: .4rem;
+    #{$borderPosition}: $border $color;
+}

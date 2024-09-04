@@ -2,9 +2,9 @@ import { v4 as uuidv4 } from 'uuid';
 
 //-------------------variables------------------------//
 
-const submitButton = document.querySelector<HTMLButtonElement>('.submit');
+const submitButton = document.querySelector<HTMLButtonElement>('.start button');
 const inputForName = document.querySelector<HTMLInputElement>('[name="name"]');
-const inputInfo = document.querySelector<HTMLDivElement>('.info');
+const inputInfo = document.querySelector<HTMLDivElement>('.start .info');
 const startSections = document.getElementsByClassName('start');
 const footerButtons = document.querySelector<HTMLDivElement>('.footer-buttons');
 
@@ -15,8 +15,8 @@ const mainContent = document.querySelector<HTMLElement>('main');
 const inputForTaskName = document.querySelector<HTMLInputElement>('[name="task-name"]');
 const categorySelect = document.querySelector<HTMLSelectElement>('[name="task-category"]');
 const statusSelect = document.querySelector<HTMLSelectElement>('[name="task-status"]');
-const addingTaskButton = document.querySelector<HTMLButtonElement>('.task-submit');
-const taskInfo = document.querySelector<HTMLButtonElement>('.task-info');
+const addingTaskButton = document.querySelector<HTMLButtonElement>('.task-form button');
+const taskInfo = document.querySelector<HTMLButtonElement>('.task-form .info');
 
 const deleteButton = document.querySelector<HTMLButtonElement>('.delete');
 const resetButton = document.querySelector<HTMLButtonElement>('.reset');

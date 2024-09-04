@@ -1,0 +1,35 @@
+.start
+{
+    display: none;
+    padding: 0 1.25rem;
+    
+    form 
+    {
+        input
+        {
+            @include input('border-bottom', $primary);
+
+            &:focus 
+            { 
+              filter: brightness(1.4); 
+            }
+        }
+        
+        button
+        {
+            @include input('border-bottom', $secondary);
+            cursor: pointer;
+            transition: filter .2s ease-in-out;
+            
+            i 
+            { 
+              color: $secondary; 
+            }
+            
+            &:hover 
+            { 
+              filter: brightness(1.4); 
+            }
+        }
+    }
+}

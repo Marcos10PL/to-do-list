@@ -1,0 +1,90 @@
+.task-list
+{
+    max-width: 48rem;
+    padding: 1rem;
+    margin: 0 auto;
+    display: none;
+
+    ul
+    {
+        list-style-type: none; 
+        
+        li
+        {  
+            margin-top: .5rem;
+            padding: .625rem;
+            border-radius: 10px;
+            background-color: $third;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            
+            &:first-child
+            {
+                margin-top: 0;
+            }
+
+            label
+            {
+                display: flex;
+                align-items: center;
+                transition: transform .15s ease-in-out;
+                margin-right: 1rem;
+                word-break: break-word;
+                cursor: pointer;
+                
+                &:hover
+                {
+                    transform: translateX(.25rem);
+                }
+                
+                input[type='checkbox']
+                {
+                    appearance: none;
+                    border-radius: 50%;
+                    margin-right: .5rem;
+                    color: inherit;
+                    border: $border currentColor;
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    
+                    &::before 
+                    {
+                        content: "";
+                        width: .8rem;
+                        height: .8rem;
+                        transform: scale(0);
+                        transition: transform .1s ease-in-out;
+                        border-radius: 50%;
+                    }
+                    
+                    &:checked::before
+                    {
+                        transform: scale(1);
+                    }
+                }
+            }
+
+            .icons
+            {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+    }
+    
+    i.fa-xmark
+    {
+        color: $red;
+        transition: .15s ease-in-out;
+        
+        &:hover
+        {
+            color: lighten($red, 20);
+            cursor: pointer;
+        }
+    }
+}
