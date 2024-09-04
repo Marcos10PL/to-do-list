@@ -1,4 +1,4 @@
-import {v4 as uuidv4} from "../_snowpack/pkg/uuid.js";
+import {v4 as uuidv4} from "./uuid.js";
 const submitButton = document.querySelector(".submit");
 const inputForName = document.querySelector('[name="name"]');
 const inputInfo = document.querySelector(".info");
